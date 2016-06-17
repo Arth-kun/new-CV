@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Arthur Cougé</title>
+	<meta charset="utf-8">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="dist/style/style.css">
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+	<div class="container">
+		<header id="titreCV" class="row">
+
+			<div class="col-lg-10 titre">
+				<h1 class="job">
+					{{informations.titre.job}}
+				</h1>
+				<h1 class="nom">
+					{{informations.titre.prenom}} <span class="nomFamille">{{informations.titre.nom}}</span>
+				</h1>
+			</div>
+
+			<div class="col-lg-2 photo">
+				<img src="dist/style/img/photo.png">
+			</div>
+		
+		</header>
+
+		<main id="mainBlock" class="row">
+			
+			<div class="col-lg-4 competences">
+				<h2 class="titre">
+					Compétences
+				</h2>
+				<ul class="competencesList">
+					<li class="competence" ng-repeat="competence in informations.competences"><span class="text">{{competence}}</span><span class="level"></span></li>
+				</ul>
+				
+			</div>
+
+			<div class="col-lg-8 infoExperience">
+				<div class="infos">
+					<div class="topInfo">
+						<span class="leftInfo">{{informations.info.tel}}</span>
+						<span class="rightInfo">{{informations.info.permis}}</span>
+					</div>
+					<div class="botInfo">
+						<span class="leftInfo">{{informations.info.mail}}</span>
+						<span class="rightInfo">{{informations.info.age}}</span>
+					</div>
+					
+				</div>
+				<div class="experiences">
+					<h2 class="titre">Expériences</h2>
+					<span class="leftBar"></span>
+					<div class="experience" ng-repeat="experience in informations.experiences">
+						<span class="leftPointer"></span>
+						<h3 class="titre">{{experience.titre}}</h3>
+						<p class="contenu">{{experience.contenu}}</p>
+					</div>
+
+				</div>
+				
+			</div>
+
+		</main>
+
+		<main id="secondBlock" class="row">
+			<span class="middleBar"></span>
+			<div class="col-lg-7 formations"></div>
+			<div class="col-lg-5 projets"></div>
+			
+		</main>
+
+		<footer id="aboutMe">
+			<h2 class="titre"></h2>
+			<div class="row contenu">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4"></div>
+			</div>	
+		</footer>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="dist/app.js"></script>
+
+</body>
+
+</html>
