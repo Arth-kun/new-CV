@@ -1,9 +1,580 @@
+// color variable
+@darkBlue1: #065ba1;
+@darkBlue2: #021b2f;
+@darkYellow: #37362d;
+@yellow: #fada00;
+@greyBlue: #96a9b9;
+@greyBlue2: #3d5366;
+@darkRed1: #9e3643;
+@darkRed2: #460008;
+@newWhite: #cccccc;
+
+@shadowBox: 1px 2px 5px #909090;
+@shadowText: 1px 1px 3px rgba(90, 90, 90, 0.25);
+@shadowTextDark: 1px 1px 2px rgba(2, 27, 47, 0.50);
+
+@myFont: 'Avenir', sans-serif;
+@titleSize: 2.5em;
+@littleTitleSize: 1.8em;
+@textSize: 1.5em;
+
+@tailleCompExp: 339px;// hauteur du block competences / experiences
+@ecartLast: 20px; //ecart last formation / projet
+
+//FONTS
+@font-face {
+	font-family: 'CODE';
+	src: url('fonts/CODE Bold.otf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('fonts/AvenirNextLTPro-Regular.otf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('fonts/AvenirNextLTPro-Demi.otf');
+	font-weight: bold;
+}
+
+
+
+
 #titreCV {
+	padding-top: 40px;
 
 	.titre {
-
 		.job {
-			color:red;
+			font-family: CODE;
+			font-size: 4.0em;
+			color: @darkBlue1;
+			text-shadow: @shadowTextDark;
+
+			margin-top: 0px;
+			margin-bottom: 30px;
+		}
+
+		.nom {
+			font-family: @myFont;
+			font-size: 3.0em;
+			font-weight: bold;
+			color: black;
+			text-shadow: @shadowText;
+
+			margin-top: 40px;
+			margin-bottom: 0px; 
+
+			.nomFamille {
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.photo {
+		.image {
+			width: 80%;
+
+			box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.5);
+		}
+	}
+}
+
+
+#mainBlock {
+	margin-top: 60px;
+
+	box-shadow: @shadowBox;
+
+	.competences {
+		padding: 0px;
+		.titre {
+			position: relative;
+			z-index: 1;
+
+			font-size: @titleSize;
+			font-family: @myFont;
+			font-weight: bold;
+			text-align: center;
+			color: @darkYellow;
+			text-shadow: @shadowText;
+
+			margin: 0px;
+			padding: 30px 0px;
+
+			background-color: @yellow;
+		}
+
+		.polygone {
+			background-image: url('img/flecheComp.png');
+
+			position: absolute;
+			top: 13%; left: 43%;
+
+			transform: rotate(45deg);
+			
+			width: 50px;
+			height: 50px;
+		}
+
+		.competencesList {
+			margin-bottom: 0px;
+			padding: 20px 20px 15px 40px;
+
+			height: @tailleCompExp;
+
+			background-color: @darkBlue2;
+
+			.competence {
+				position: relative;
+				list-style: none;
+
+				padding-top: 8px; 
+					
+				.text {
+					font-size: @textSize;
+					font-family: @myFont;
+					font-weight: bold;
+					color: @greyBlue;
+				}
+
+				.level {
+					position: absolute;
+					left: 50%; top: 60%;
+
+					width: 35%;
+					height: 2px;
+
+					background-color: @greyBlue;
+
+					.myLevel {
+						position: absolute;
+
+						height: 100%;
+						width: 0%;
+
+						background-color: @darkRed1;
+						transition: width 1.5s;
+					}
+					.niveau1 {
+						width: 25%;
+					}
+					.niveau2 {
+						width: 50%;
+					}
+					.niveau3 {
+						width: 75%;
+					}
+
+					.levelBall {
+						position: absolute;
+						left: 23%; top: -2px;
+
+						width: 6px;
+						height: 6px;
+
+						border: 1px solid transparent;
+						border-radius: 6px;
+
+						background-color: @greyBlue;
+
+						transition: background-color 0.2s;
+					}
+					.levelBall2 {
+						left: 48%;
+					}
+					.levelBall3 {
+						left: 73%;
+					}
+					.levelBall4 {
+						left: 98%;
+					}
+
+					.reached {
+						background-color: @darkRed1;
+					}
+				}
+			}
+		}
+	}
+
+	.infoExperience {
+		padding: 0px;
+
+		.infos {
+			font-family: @myFont;
+			font-size: @littleTitleSize;
+			font-weight: bold;
+			color: @darkBlue2;
+			text-shadow: @shadowText;
+
+			padding: 0px 35px;
+
+			background-color: @greyBlue;
+
+			.topInfo {
+				position: relative;
+
+				padding: 15px 0px 0px;
+			}
+
+			.botInfo {
+				position: relative;
+
+				padding: 0px 0px 13px; 
+			}
+
+			.rightInfo {
+				position: absolute;
+				left: 83%;
+			}
+		}
+
+		.experiences {
+			position: relative;
+
+			font-family: @myFont;
+
+			height: @tailleCompExp;
+
+			padding: 0px 35px;
+
+			background-color: @greyBlue2;
+
+			.titre {
+				font-family: @myFont;
+				font-size: @titleSize;
+				font-weight: bold;
+				color: @greyBlue;
+				text-shadow: @shadowTextDark;
+
+				margin: 0px;
+				padding: 25px 0px 0px;
+			}
+
+			.leftBar {
+				position: absolute;
+				top: 22%; left: 5%;
+				z-index: 2;
+
+				width: 2px;
+				height: 70%;
+
+				background-color: @darkBlue2;
+			}
+
+			.contenu {
+				padding: 20px 0px 15px;
+
+				.experience {
+					position: relative;
+
+					padding-left: 25px;
+					margin-bottom: 20px;
+
+					.titreExp {
+						position: relative;
+
+						font-family: @myFont;
+						font-weight: bold;
+						font-size: @littleTitleSize;
+						color: @newWhite;
+						text-shadow: @shadowTextDark;
+
+						margin: 0px;
+
+						.leftPointer {
+							position: absolute;
+							top: 35%; left: -3.6%;
+							z-index: 3;
+
+							width: 10px;
+							height: 10px;
+
+							border: 0px solid transparent;
+							border-radius: 6px;
+
+							background-color: @greyBlue;
+						}
+
+						.selector {
+							position: absolute;
+							top: 20%; left: -4.2%;
+							z-index: 1;
+
+							width: 18px;
+							height: 18px;
+
+							border: 2px solid transparent;
+							border-radius: 18px;
+							border-color: @greyBlue;
+						}
+						.noLeft {
+							border-left: none;
+						}
+						.noRight {
+							border-right: none;
+						}
+						.noTop {
+							border-top: none;
+						}
+						.noBottom {
+							border-bottom: none;
+						}						
+						.clicked {
+							background-color: @darkRed2;
+							z-index: 3;
+						}
+					}
+
+					.contenuExp {
+						font-size: @textSize;
+						color: @newWhite;
+
+						margin: 0px;
+						display: none;
+					}
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#secondBlock {
+	margin-top: 60px;
+
+	.formations {
+		padding: 0px;
+
+		.titre {
+			font-family: @myFont;
+			font-weight: bold;
+			font-size: @titleSize;
+			color: @darkBlue2;
+			text-shadow: @shadowTextDark;
+			text-align: center;
+
+			margin: 0px;
+		}
+
+		.contentForm {
+			padding: 30px 30px 0px 0px;
+			margin-bottom: 0px;
+
+			.formation {
+				list-style: none;
+				color: @darkRed2;
+
+				padding: 5px 0px 5px 30px;
+				
+				.titreForm {
+					font-family: @myFont;
+					font-weight: bold;
+					font-size: @littleTitleSize;
+				}
+
+				.contenuForm {
+					font-family: @myFont;
+					font-size: @textSize;
+				}
+			}
+
+			.last {
+				color: @darkBlue2;
+
+				margin-top: @ecartLast;
+
+				background-color: @greyBlue;
+				box-shadow: @shadowBox;
+
+				.titreForm {
+					text-shadow: @shadowTextDark;
+				}
+			}
+		}
+
+	}
+
+	.projets {
+		padding: 0px;
+		padding-bottom: 40px;
+
+		border-left : 3px solid @darkBlue1;
+
+		.titre {
+			font-family: @myFont;
+			font-weight: bold;
+			font-size: @titleSize;
+			color: @darkBlue2;
+			text-shadow: @shadowTextDark;
+			text-align: center;
+
+			margin: 0px;
+		}
+
+		.contentProj {
+			padding: 30px 30px 0px 0px;
+			margin-bottom: 0px;
+
+			.projet {
+				list-style: none;
+				color: @darkRed2;
+
+				padding: 5px 0px 5px 30px;
+				
+				.titreProj {
+					font-family: @myFont;
+					font-weight: bold;
+					font-size: @littleTitleSize;
+				}
+
+				.contenuProj {
+					font-family: @myFont;
+					font-size: @textSize;
+				}
+			}
+
+			.last {
+				color: @greyBlue;
+				
+				margin-top: 45px + @ecartLast;
+				padding-bottom: 10px;
+				padding-left: 25px;
+
+				background-color: @darkBlue2;
+				box-shadow: @shadowBox;
+
+				.titreProj {
+					text-shadow: 1px 1px 2px rgba(150, 169, 185, 0.25);
+				}
+			}
+		}
+
+	}
+}
+
+
+#aboutMe {
+	background-color: @darkBlue2;
+	box-shadow: @shadowBox;
+
+	margin: 60px 0px;
+	padding-bottom: 20px;
+
+	.titre {
+		font-family: @myFont;
+		font-weight: bold;
+		font-size: @titleSize;
+		color: @greyBlue;
+
+		margin: 0px;
+		padding: 15px 20px 0px;
+	}
+
+	.contenu {
+
+		.titreDetail {
+			font-family: @myFont;
+			font-weight: bold;
+			font-size: @littleTitleSize;
+			color: @darkRed1;
+
+			margin: 0px;
+		}
+
+		.listAboutMe {
+			padding: 5px 0px;
+
+			.infoAboutMe {
+				list-style: none;
+				font-family: @myFont;
+				font-size: @textSize;
+				color: @greyBlue;
+			}
+		}
+
+		.resSoc {
+			padding: 0px;
+			padding-top: 30px;
+			
+			.listRs {
+				position: relative;
+
+				text-align: center;
+
+				padding: 10px 0px;
+				height: 50px;
+
+				.infoRs {
+					position: absolute;
+
+					width: 48px;
+					height: 49px;
+
+					list-style: none;
+					display: inline;
+
+					.hoverRs {
+						position: absolute;
+						top: 0; left: 0;
+
+						width: 48px;
+						height: 49px;
+
+						display: none;
+					}
+					&.rs0 .hoverRs{
+						background-image: url('img/twitterColor.png');
+					}
+					&.rs1 .hoverRs{
+						background-image: url('img/linkedinColor.png');
+					}
+					&.rs2 .hoverRs{
+						background-image: url('img/githubColor.png');
+					}
+
+					&:hover {
+						cursor: pointer;
+
+						img {
+							visibility: hidden;
+						}
+
+						.hoverRs {
+							display: initial;
+						}
+					}
+				}
+
+				.rs0 {
+					left: 30%;
+				}
+				.rs1 {
+					left: 45%;
+				}
+				.rs2 {
+					left: 60%;
+				}
+			}
+
+			.titreDetail {
+				text-align: center;
+			}
+		}
+
+		.iAm {
+			padding: 0px;
+			padding-left: 7%;
+		}
+
+		.iLike {
+			padding: 0px;
+			padding-left: 7%;
 		}
 	}
 }

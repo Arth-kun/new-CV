@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="dist/style/style.css">
 
 </head>
@@ -17,15 +18,15 @@
 
 			<div class="col-lg-10 titre">
 				<h1 class="job">
-					{{informations.titre.job}}
+					{{curiculumVitae.titre.job}}
 				</h1>
 				<h1 class="nom">
-					{{informations.titre.prenom}} <span class="nomFamille">{{informations.titre.nom}}</span>
+					{{curiculumVitae.titre.prenom}} <span class="nomFamille">{{curiculumVitae.titre.nom}}</span>
 				</h1>
 			</div>
 
 			<div class="col-lg-2 photo">
-				<img src="dist/style/img/photo.png">
+				<img class="image" src="dist/style/img/photo.png">
 			</div>
 		
 		</header>
@@ -36,8 +37,15 @@
 				<h2 class="titre">
 					Compétences
 				</h2>
+				<span class="polygone"></span>
 				<ul class="competencesList">
-					<li class="competence" ng-repeat="competence in informations.competences"><span class="text">{{competence}}</span><span class="level"></span></li>
+					<li class="competence" ng-repeat="competence in curiculumVitae.competences" ng-init="loadSkillLevel()">
+						<span class="text">{{competence[0]}}</span>
+						<span class="level {{competence[1]}}">
+							<span class="myLevel {{competence[1]}}"></span>
+							<span class="levelBall levelBall{{ball}}" ng-repeat="ball in [1, 2, 3, 4]"></span>
+						</span>
+					</li>
 				</ul>
 				
 			</div>
@@ -45,22 +53,26 @@
 			<div class="col-lg-8 infoExperience">
 				<div class="infos">
 					<div class="topInfo">
-						<span class="leftInfo">{{informations.info.tel}}</span>
-						<span class="rightInfo">{{informations.info.permis}}</span>
+						<span class="leftInfo">{{curiculumVitae.info.tel}}</span>
+						<span class="rightInfo">{{curiculumVitae.info.age}}</span>
 					</div>
 					<div class="botInfo">
-						<span class="leftInfo">{{informations.info.mail}}</span>
-						<span class="rightInfo">{{informations.info.age}}</span>
+						<span class="leftInfo">{{curiculumVitae.info.mail}}</span>
+						<span class="rightInfo">{{curiculumVitae.info.permis}}</span>
 					</div>
 					
 				</div>
 				<div class="experiences">
 					<h2 class="titre">Expériences</h2>
 					<span class="leftBar"></span>
-					<div class="experience" ng-repeat="experience in informations.experiences">
-						<span class="leftPointer"></span>
-						<h3 class="titre">{{experience.titre}}</h3>
-						<p class="contenu">{{experience.contenu}}</p>
+					<div class="contenu">
+						<div class="experience" ng-repeat="experience in curiculumVitae.experiences" ng-click="setActive($index)" ng-mouseover="setOver($index)" ng-mouseleave="setLeave($index)">
+							
+							<h3 class="titreExp">{{experience.titre}}
+							<span class="leftPointer"></span>
+							<span class="selector noLeft noRight noBottom noTop selector{{$index}}" ng-class="{active:$first, notActive:!$first}"></span></h3>
+							<p class="contenuExp contenuExp{{$index}}" ng-class="{notActiveText:$first}">{{experience.contenu}}</p>
+						</div>
 					</div>
 
 				</div>
@@ -71,17 +83,51 @@
 
 		<main id="secondBlock" class="row">
 			<span class="middleBar"></span>
-			<div class="col-lg-7 formations"></div>
-			<div class="col-lg-5 projets"></div>
+			<div class="col-lg-7 formations">
+				<h2 class="titre">Formations</h2>
+				<ul class="contentForm">
+					<li class="formation" ng-repeat="formation in curiculumVitae.formations" ng-class="{last:$last}">
+						<h3 class="titreForm">{{formation.titre}}</h3>
+						<p class="contenuForm">{{formation.contenu}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-5 projets">
+				<h2 class="titre">Projets</h2>
+				<ul class="contentProj">
+					<li class="projet" ng-repeat="projet in curiculumVitae.projets" ng-class="{last:$last}">
+						<h3 class="titreProj">{{projet.titre}}</h3>
+						<p class="contenuProj">{{projet.contenu}}</p>
+					</li>
+				</ul>
+			</div>
 			
 		</main>
 
-		<footer id="aboutMe">
-			<h2 class="titre"></h2>
-			<div class="row contenu">
-				<div class="col-lg-4"></div>
-				<div class="col-lg-4"></div>
-				<div class="col-lg-4"></div>
+		<footer id="aboutMe" class="row">
+			<h2 class="titre">About me</h2>
+			<div class="contenu">
+				<div class="col-lg-4 resSoc">
+					<h3 class="titreDetail">{{curiculumVitae.aboutMe[0].titre}}</h3>
+					<ul class="listRs">
+						<li class="infoRs rs{{$index}}" ng-repeat="contenu in curiculumVitae.aboutMe[0].contenu" ng-class="{notFirst:!$first}" ng-click="goToRs($index)">
+							<img ng-src="{{contenu}}">
+							<span class="hoverRs"></span>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-4 iAm">
+					<h3 class="titreDetail">{{curiculumVitae.aboutMe[1].titre}}</h3>
+					<ul class="listAboutMe">
+						<li class="infoAboutMe" ng-repeat="contenu in curiculumVitae.aboutMe[1].contenu">{{contenu}}</li>
+					</ul>
+				</div>
+				<div class="col-lg-4 iLike">
+					<h3 class="titreDetail">{{curiculumVitae.aboutMe[2].titre}}</h3>
+					<ul class="listAboutMe">
+						<li class="infoAboutMe" ng-repeat="contenu in curiculumVitae.aboutMe[2].contenu">{{contenu}}</li>
+					</ul>
+				</div>
 			</div>	
 		</footer>
 	</div>

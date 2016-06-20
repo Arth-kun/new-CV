@@ -1,4 +1,425 @@
+@font-face {
+  font-family: 'CODE';
+  src: url('fonts/CODE Bold.otf');
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/AvenirNextLTPro-Regular.otf');
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/AvenirNextLTPro-Demi.otf');
+  font-weight: bold;
+}
+#titreCV {
+  padding-top: 40px;
+}
 #titreCV .titre .job {
-  color: red;
+  font-family: CODE;
+  font-size: 4.0em;
+  color: #065ba1;
+  text-shadow: 1px 1px 2px rgba(2, 27, 47, 0.5);
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+#titreCV .titre .nom {
+  font-family: 'Avenir', sans-serif;
+  font-size: 3.0em;
+  font-weight: bold;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(90, 90, 90, 0.25);
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+#titreCV .titre .nom .nomFamille {
+  text-transform: uppercase;
+}
+#titreCV .photo .image {
+  width: 80%;
+  box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.5);
+}
+#mainBlock {
+  margin-top: 60px;
+  box-shadow: 1px 2px 5px #909090;
+}
+#mainBlock .competences {
+  padding: 0px;
+}
+#mainBlock .competences .titre {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5em;
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #37362d;
+  text-shadow: 1px 1px 3px rgba(90, 90, 90, 0.25);
+  margin: 0px;
+  padding: 30px 0px;
+  background-color: #fada00;
+}
+#mainBlock .competences .polygone {
+  background-image: url('img/flecheComp.png');
+  position: absolute;
+  top: 13%;
+  left: 43%;
+  transform: rotate(45deg);
+  width: 50px;
+  height: 50px;
+}
+#mainBlock .competences .competencesList {
+  margin-bottom: 0px;
+  padding: 20px 20px 15px 40px;
+  height: 339px;
+  background-color: #021b2f;
+}
+#mainBlock .competences .competencesList .competence {
+  position: relative;
+  list-style: none;
+  padding-top: 8px;
+}
+#mainBlock .competences .competencesList .competence .text {
+  font-size: 1.5em;
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  color: #96a9b9;
+}
+#mainBlock .competences .competencesList .competence .level {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 35%;
+  height: 2px;
+  background-color: #96a9b9;
+}
+#mainBlock .competences .competencesList .competence .level .myLevel {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #9e3643;
+  transition: width 1.5s;
+}
+#mainBlock .competences .competencesList .competence .level .niveau1 {
+  width: 25%;
+}
+#mainBlock .competences .competencesList .competence .level .niveau2 {
+  width: 50%;
+}
+#mainBlock .competences .competencesList .competence .level .niveau3 {
+  width: 75%;
+}
+#mainBlock .competences .competencesList .competence .level .levelBall {
+  position: absolute;
+  left: 23%;
+  top: -2px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: #96a9b9;
+  transition: background-color 0.2s;
+}
+#mainBlock .competences .competencesList .competence .level .levelBall2 {
+  left: 48%;
+}
+#mainBlock .competences .competencesList .competence .level .levelBall3 {
+  left: 73%;
+}
+#mainBlock .competences .competencesList .competence .level .levelBall4 {
+  left: 98%;
+}
+#mainBlock .competences .competencesList .competence .level .reached {
+  background-color: #9e3643;
+}
+#mainBlock .infoExperience {
+  padding: 0px;
+}
+#mainBlock .infoExperience .infos {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #021b2f;
+  text-shadow: 1px 1px 3px rgba(90, 90, 90, 0.25);
+  padding: 0px 35px;
+  background-color: #96a9b9;
+}
+#mainBlock .infoExperience .infos .topInfo {
+  position: relative;
+  padding: 15px 0px 0px;
+}
+#mainBlock .infoExperience .infos .botInfo {
+  position: relative;
+  padding: 0px 0px 13px;
+}
+#mainBlock .infoExperience .infos .rightInfo {
+  position: absolute;
+  left: 83%;
+}
+#mainBlock .infoExperience .experiences {
+  position: relative;
+  font-family: 'Avenir', sans-serif;
+  height: 339px;
+  padding: 0px 35px;
+  background-color: #3d5366;
+}
+#mainBlock .infoExperience .experiences .titre {
+  font-family: 'Avenir', sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #96a9b9;
+  text-shadow: 1px 1px 2px rgba(2, 27, 47, 0.5);
+  margin: 0px;
+  padding: 25px 0px 0px;
+}
+#mainBlock .infoExperience .experiences .leftBar {
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  z-index: 2;
+  width: 2px;
+  height: 70%;
+  background-color: #021b2f;
+}
+#mainBlock .infoExperience .experiences .contenu {
+  padding: 20px 0px 15px;
+}
+#mainBlock .infoExperience .experiences .contenu .experience {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp {
+  position: relative;
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 1.8em;
+  color: #cccccc;
+  text-shadow: 1px 1px 2px rgba(2, 27, 47, 0.5);
+  margin: 0px;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .leftPointer {
+  position: absolute;
+  top: 35%;
+  left: -3.6%;
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  border: 0px solid transparent;
+  border-radius: 6px;
+  background-color: #96a9b9;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .selector {
+  position: absolute;
+  top: 20%;
+  left: -4.2%;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  border-color: #96a9b9;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .noLeft {
+  border-left: none;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .noRight {
+  border-right: none;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .noTop {
+  border-top: none;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .noBottom {
+  border-bottom: none;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .titreExp .clicked {
+  background-color: #460008;
+  z-index: 3;
+}
+#mainBlock .infoExperience .experiences .contenu .experience .contenuExp {
+  font-size: 1.5em;
+  color: #cccccc;
+  margin: 0px;
+  display: none;
+}
+#mainBlock .infoExperience .experiences .contenu .experience:hover {
+  cursor: pointer;
+}
+#secondBlock {
+  margin-top: 60px;
+}
+#secondBlock .formations {
+  padding: 0px;
+}
+#secondBlock .formations .titre {
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: #021b2f;
+  text-shadow: 1px 1px 2px rgba(2, 27, 47, 0.5);
+  text-align: center;
+  margin: 0px;
+}
+#secondBlock .formations .contentForm {
+  padding: 30px 30px 0px 0px;
+  margin-bottom: 0px;
+}
+#secondBlock .formations .contentForm .formation {
+  list-style: none;
+  color: #460008;
+  padding: 5px 0px 5px 30px;
+}
+#secondBlock .formations .contentForm .formation .titreForm {
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+#secondBlock .formations .contentForm .formation .contenuForm {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.5em;
+}
+#secondBlock .formations .contentForm .last {
+  color: #021b2f;
+  margin-top: 20px;
+  background-color: #96a9b9;
+  box-shadow: 1px 2px 5px #909090;
+}
+#secondBlock .formations .contentForm .last .titreForm {
+  text-shadow: 1px 1px 2px rgba(2, 27, 47, 0.5);
+}
+#secondBlock .projets {
+  padding: 0px;
+  padding-bottom: 40px;
+  border-left: 3px solid #065ba1;
+}
+#secondBlock .projets .titre {
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: #021b2f;
+  text-shadow: 1px 1px 2px rgba(2, 27, 47, 0.5);
+  text-align: center;
+  margin: 0px;
+}
+#secondBlock .projets .contentProj {
+  padding: 30px 30px 0px 0px;
+  margin-bottom: 0px;
+}
+#secondBlock .projets .contentProj .projet {
+  list-style: none;
+  color: #460008;
+  padding: 5px 0px 5px 30px;
+}
+#secondBlock .projets .contentProj .projet .titreProj {
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+#secondBlock .projets .contentProj .projet .contenuProj {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.5em;
+}
+#secondBlock .projets .contentProj .last {
+  color: #96a9b9;
+  margin-top: 65px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  background-color: #021b2f;
+  box-shadow: 1px 2px 5px #909090;
+}
+#secondBlock .projets .contentProj .last .titreProj {
+  text-shadow: 1px 1px 2px rgba(150, 169, 185, 0.25);
+}
+#aboutMe {
+  background-color: #021b2f;
+  box-shadow: 1px 2px 5px #909090;
+  margin: 60px 0px;
+  padding-bottom: 20px;
+}
+#aboutMe .titre {
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: #96a9b9;
+  margin: 0px;
+  padding: 15px 20px 0px;
+}
+#aboutMe .contenu .titreDetail {
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  font-size: 1.8em;
+  color: #9e3643;
+  margin: 0px;
+}
+#aboutMe .contenu .listAboutMe {
+  padding: 5px 0px;
+}
+#aboutMe .contenu .listAboutMe .infoAboutMe {
+  list-style: none;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.5em;
+  color: #96a9b9;
+}
+#aboutMe .contenu .resSoc {
+  padding: 0px;
+  padding-top: 30px;
+}
+#aboutMe .contenu .resSoc .listRs {
+  position: relative;
+  text-align: center;
+  padding: 10px 0px;
+  height: 50px;
+}
+#aboutMe .contenu .resSoc .listRs .infoRs {
+  position: absolute;
+  width: 48px;
+  height: 49px;
+  list-style: none;
+  display: inline;
+}
+#aboutMe .contenu .resSoc .listRs .infoRs .hoverRs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 49px;
+  display: none;
+}
+#aboutMe .contenu .resSoc .listRs .infoRs.rs0 .hoverRs {
+  background-image: url('img/twitterColor.png');
+}
+#aboutMe .contenu .resSoc .listRs .infoRs.rs1 .hoverRs {
+  background-image: url('img/linkedinColor.png');
+}
+#aboutMe .contenu .resSoc .listRs .infoRs.rs2 .hoverRs {
+  background-image: url('img/githubColor.png');
+}
+#aboutMe .contenu .resSoc .listRs .infoRs:hover {
+  cursor: pointer;
+}
+#aboutMe .contenu .resSoc .listRs .infoRs:hover img {
+  visibility: hidden;
+}
+#aboutMe .contenu .resSoc .listRs .infoRs:hover .hoverRs {
+  display: initial;
+}
+#aboutMe .contenu .resSoc .listRs .rs0 {
+  left: 30%;
+}
+#aboutMe .contenu .resSoc .listRs .rs1 {
+  left: 45%;
+}
+#aboutMe .contenu .resSoc .listRs .rs2 {
+  left: 60%;
+}
+#aboutMe .contenu .resSoc .titreDetail {
+  text-align: center;
+}
+#aboutMe .contenu .iAm {
+  padding: 0px;
+  padding-left: 7%;
+}
+#aboutMe .contenu .iLike {
+  padding: 0px;
+  padding-left: 7%;
 }
 /*# sourceMappingURL=style.css.map */
