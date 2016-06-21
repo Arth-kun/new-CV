@@ -113,11 +113,13 @@ angular.module('myApp', [])
 			$('.contenuExp' + index).slideDown(200);
 
 			expLoader.expLeave("." + active[1]);
-			setTimeout(function() {
 				$('.' + active[1]).removeClass('active')
+				.addClass('noTop')
+				.addClass('noBottom')
+				.addClass('noRight')
+				.addClass('noLeft')
 				.removeClass('clicked')
 				.addClass('notActive');
-			}, 200);
 			
 			$('.selector' + index).removeClass('notActive')
 				.addClass('active')
@@ -208,7 +210,7 @@ angular.module('myApp', [])
 		}],
 		"formations": [{
 			"titre": "Développeur Logiciel - 2015/2017",
-			"contenu": "Apprentissage d’un titre professionel de niveau III à l’ IMIE, école de la filière numérique à Angers."
+			"contenu": "Apprentissage d’un titre professionnel de niveau III à l’ IMIE, école de la filière numérique à Angers."
 		}, {
 			"titre": "Cours en ligne - depuis 2016",
 			"contenu": "Apprentissage des nouvelles technos web sur le site de cours en ligne egghead.io."
@@ -218,7 +220,7 @@ angular.module('myApp', [])
 		}],
 		"projets": [{
 			"titre": "ConecShop",
-			"contenu": "Création d’une application mobile hybride ayant pour but d’afficher des promotions en fonction des iBeacons captés par l’application. Technos utilisées : Cordova, C#, HTML / CSS, AngularJS."
+			"contenu": "Création d’une application mobile hybride ayant pour but d’afficher des promotions en fonction des iBeacons captés par l’application. Technos utilisées: Cordova, C#, HTML / CSS, AngularJS."
 		}, {
 			"titre": "CV en ligne",
 			"contenu": "Format web numérique de mon CV en site responsive (WIP) full Javascript."

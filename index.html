@@ -13,10 +13,10 @@
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
-	<div class="container">
+	<div id="mainContainer" class="container">
 		<header id="titreCV" class="row">
 
-			<div class="col-lg-10 titre">
+			<div class="col-lg-10 col-md-10 col-xs-10 titre">
 				<h1 class="job">
 					{{curiculumVitae.titre.job}}
 				</h1>
@@ -25,7 +25,7 @@
 				</h1>
 			</div>
 
-			<div class="col-lg-2 photo">
+			<div class="col-lg-2 col-md-2 col-xs-2 photo">
 				<img class="image" src="dist/style/img/photo.png">
 			</div>
 		
@@ -33,7 +33,7 @@
 
 		<main id="mainBlock" class="row">
 			
-			<div class="col-lg-4 competences">
+			<div class="col-lg-4 col-md-4 competences">
 				<h2 class="titre">
 					Compétences
 				</h2>
@@ -50,7 +50,7 @@
 				
 			</div>
 
-			<div class="col-lg-8 infoExperience">
+			<div class="col-lg-8 col-md-8 infoExperience">
 				<div class="infos">
 					<div class="topInfo">
 						<span class="leftInfo">{{curiculumVitae.info.tel}}</span>
@@ -83,7 +83,7 @@
 
 		<main id="secondBlock" class="row">
 			<span class="middleBar"></span>
-			<div class="col-lg-7 formations">
+			<div class="col-lg-7 col-md-7 formations">
 				<h2 class="titre">Formations</h2>
 				<ul class="contentForm">
 					<li class="formation" ng-repeat="formation in curiculumVitae.formations" ng-class="{last:$last}">
@@ -92,7 +92,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-lg-5 projets">
+			<div class="col-lg-5 col-md-5 projets">
 				<h2 class="titre">Projets</h2>
 				<ul class="contentProj">
 					<li class="projet" ng-repeat="projet in curiculumVitae.projets" ng-class="{last:$last}">
@@ -107,7 +107,7 @@
 		<footer id="aboutMe" class="row">
 			<h2 class="titre">About me</h2>
 			<div class="contenu">
-				<div class="col-lg-4 resSoc">
+				<div class="col-lg-4 col-md-4 resSoc">
 					<h3 class="titreDetail">{{curiculumVitae.aboutMe[0].titre}}</h3>
 					<ul class="listRs">
 						<li class="infoRs rs{{$index}}" ng-repeat="contenu in curiculumVitae.aboutMe[0].contenu" ng-class="{notFirst:!$first}" ng-click="goToRs($index)">
@@ -116,13 +116,13 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-lg-4 iAm">
+				<div class="col-lg-4 col-md-4 iAm">
 					<h3 class="titreDetail">{{curiculumVitae.aboutMe[1].titre}}</h3>
 					<ul class="listAboutMe">
 						<li class="infoAboutMe" ng-repeat="contenu in curiculumVitae.aboutMe[1].contenu">{{contenu}}</li>
 					</ul>
 				</div>
-				<div class="col-lg-4 iLike">
+				<div class="col-lg-4 col-md-4 iLike">
 					<h3 class="titreDetail">{{curiculumVitae.aboutMe[2].titre}}</h3>
 					<ul class="listAboutMe">
 						<li class="infoAboutMe" ng-repeat="contenu in curiculumVitae.aboutMe[2].contenu">{{contenu}}</li>

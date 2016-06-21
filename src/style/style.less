@@ -7,19 +7,45 @@
 @greyBlue2: #3d5366;
 @darkRed1: #9e3643;
 @darkRed2: #460008;
-@newWhite: #cccccc;
+@newWhite: #e0e0e0;
 
 @shadowBox: 1px 2px 5px #909090;
 @shadowText: 1px 1px 3px rgba(90, 90, 90, 0.25);
 @shadowTextDark: 1px 1px 2px rgba(2, 27, 47, 0.50);
+@shadowTextBlue: 1px 1px 2px rgba(6, 91, 161, 0.50);
 
 @myFont: 'Avenir', sans-serif;
+
 @titleSize: 2.5em;
 @littleTitleSize: 1.8em;
 @textSize: 1.5em;
 
 @tailleCompExp: 339px;// hauteur du block competences / experiences
 @ecartLast: 20px; //ecart last formation / projet
+
+//medium size
+	@titleSizemd: 2.2em;
+	@littleTitleSizemd: 1.5em;
+	@textSizemd: 1.3em;
+
+	@tailleCompExpmd: 300px;// hauteur du block competences / experiences
+	@ecartLastmd: 20px; //ecart last formation / projet
+
+//mobile size paysage
+	@titleSizexs: 2em;
+	@littleTitleSizexs: 1.5em;
+	@textSizexs: 1.3em;
+
+	@ecartLastxs: 20px; //ecart last formation / projet
+
+//mobile size portrait
+	@titleSizexxs: 1.5em;
+	@littleTitleSizexxs: 1.3em;
+	@textSizexxs: 1.1em;
+
+	@ecartLastxxs: 20px; //ecart last formation / projet
+
+
 
 //FONTS
 @font-face {
@@ -38,11 +64,30 @@
 	font-weight: bold;
 }
 
-
+#mainContainer {
+	@media (max-width: 991px) {
+		width: auto !important;
+	}
+}
 
 
 #titreCV {
 	padding-top: 40px;
+
+	@media (max-width: 991px) {
+		padding-bottom: 10px;
+		padding-left: 15px;
+		padding-right: 10px;
+
+		@media (max-width: 530px) {
+			padding-left: 0px;
+			padding-right: 0px;
+			
+			@media (max-width: 503px) {
+				padding-top: 30px;
+			}
+		}
+	}
 
 	.titre {
 		.job {
@@ -50,9 +95,21 @@
 			font-size: 4.0em;
 			color: @darkBlue1;
 			text-shadow: @shadowTextDark;
+			font-weight: lighter;
 
 			margin-top: 0px;
-			margin-bottom: 30px;
+
+			@media (max-width: 1199px) {
+				font-size: 3.0em;
+
+				@media (max-width: 991px) {
+					font-size: 2.5em;
+
+					@media (max-width: 503px) {
+						font-size: 1.7em;
+					}	
+				}
+			}
 		}
 
 		.nom {
@@ -68,6 +125,20 @@
 			.nomFamille {
 				text-transform: uppercase;
 			}
+
+			@media (max-width: 1199px) {
+				font-size: 2.5em;
+				margin-top: 20px;
+
+				@media (max-width: 991px) {
+					font-size: 2em;
+					margin-top: 5px;
+
+					@media (max-width: 503px) {
+						font-size: 1.5em;
+					}	
+				}
+			}
 		}
 	}
 
@@ -76,6 +147,21 @@
 			width: 80%;
 
 			box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.5);
+
+			min-width: 66.016px;
+
+			@media (max-width: 1199px) {
+				width: 70%;
+			}
+
+			@media (max-width: 503px) {
+				min-width: 50px;
+			}	
+		}
+
+
+		@media (max-width: 503px) {
+			padding: 0px;
 		}
 	}
 }
@@ -85,6 +171,14 @@
 	margin-top: 60px;
 
 	box-shadow: @shadowBox;
+
+	@media (max-width: 1199px) {
+		margin-top: 30px;
+
+		@media (max-width: 991px) {
+			margin-top: 15px;
+		}
+	}
 
 	.competences {
 		padding: 0px;
@@ -103,6 +197,18 @@
 			padding: 30px 0px;
 
 			background-color: @yellow;
+
+			@media (max-width: 1199px) {
+				font-size: @titleSizemd;
+				
+				@media (max-width: 991px) {
+					font-size: @titleSizexs;
+
+					@media (max-width: 503px) {
+						font-size: @titleSizexxs;
+					}
+				}
+			}
 		}
 
 		.polygone {
@@ -115,6 +221,23 @@
 			
 			width: 50px;
 			height: 50px;
+
+			@media (max-width: 1199px) {
+				width: 45px;
+				height: 45px;
+				
+				@media (max-width: 991px) {
+					width: 45px;
+					height: 45px;
+					left: 45%;
+
+					@media (max-width: 503px) {
+						width: 42px;
+						height: 42px;
+						left: 43%;
+					}
+				}
+			}
 		}
 
 		.competencesList {
@@ -125,17 +248,51 @@
 
 			background-color: @darkBlue2;
 
+			@media (max-width: 1199px) {
+				height: @tailleCompExpmd;
+				
+				@media (max-width: 991px) {
+					height: 355px;
+					padding: 20px 10px 0px 50px;
+
+					@media (max-width: 503px) {
+						height: 285px;
+						padding: 15px 10px 0px 30px;
+					}
+				}
+			}
+
 			.competence {
 				position: relative;
 				list-style: none;
 
 				padding-top: 8px; 
+
+				@media (max-width: 991px) {
+					padding-top: 15px; 
+
+					@media (max-width: 503px) {
+						padding-top: 10px; 
+					}
+				}
 					
 				.text {
 					font-size: @textSize;
 					font-family: @myFont;
 					font-weight: bold;
 					color: @greyBlue;
+
+					@media (max-width: 1199px) {
+						font-size: @textSizemd;
+						
+						@media (max-width: 991px) {
+							font-size: @textSizexs;
+
+							@media (max-width: 503px) {
+								font-size: @textSizexxs;
+							}
+						}
+					}
 				}
 
 				.level {
@@ -146,6 +303,15 @@
 					height: 2px;
 
 					background-color: @greyBlue;
+
+					@media (max-width: 991px) {
+						width: 25%;
+						left: 60%;
+
+						@media (max-width: 503px) {
+							height: 1px;
+						}
+					}
 
 					.myLevel {
 						position: absolute;
@@ -179,6 +345,18 @@
 						background-color: @greyBlue;
 
 						transition: background-color 0.2s;
+
+						@media (max-width: 991px) {
+							width: 8px;
+							height: 8px;
+							top: -3px;
+
+							@media (max-width: 503px) {
+								width: 5px;
+								height: 5px;
+								top: -2px;
+							}
+						}
 					}
 					.levelBall2 {
 						left: 48%;
@@ -212,6 +390,20 @@
 
 			background-color: @greyBlue;
 
+			@media (max-width: 1199px) {
+				font-size: @littleTitleSizemd;
+				
+				@media (max-width: 991px) {
+					font-size: @littleTitleSizexs;
+
+					@media (max-width: 503px) {
+						font-size: @littleTitleSizexxs;
+						padding-bottom: 50px;
+					}
+
+				}
+			}
+
 			.topInfo {
 				position: relative;
 
@@ -221,12 +413,45 @@
 			.botInfo {
 				position: relative;
 
-				padding: 0px 0px 13px; 
+				padding: 0px 0px 13px;
+
+				@media (max-width: 1199px) {
+					padding: 3px 0px 15px;
+					
+					@media (max-width: 991px) {
+						padding: 0px 0px 13px;
+					}
+				} 
 			}
 
 			.rightInfo {
 				position: absolute;
-				left: 83%;
+				left: 82%;
+
+				@media (max-width: 553px) {
+					left: 80%;
+					@media (max-width: 503px) {
+						left: 0; top: 175%;
+
+						@media (max-width: 343px) {
+							top: 225%;
+
+							@media (max-width: 314px) {
+								top: 175%;
+							}
+						}
+					}
+				}
+			}
+
+			.botInfo .rightInfo {
+				@media (max-width: 503px) {
+					left: 0; top: 140%;
+
+					@media (max-width: 343px) {
+						top: 120%;
+					}
+				}
 			}
 		}
 
@@ -241,6 +466,52 @@
 
 			background-color: @greyBlue2;
 
+			@media (max-width: 1199px) {
+				height: @tailleCompExpmd;
+				padding: 0px 24px;
+
+				@media (max-width: 991px) {
+					height: 300px;
+					padding: 0px 15px;
+
+					@media (max-width: 562px) {
+						height: 320px;
+
+						@media (max-width: 533px) {
+							height: 340px;
+
+							@media (max-width: 509px) {
+								height: 360px;
+
+								@media (max-width: 503px) {
+									height: 270px;
+
+									@media (max-width: 463px) {
+										height: 300px;
+
+										@media (max-width: 452px) {
+											height: 320px;
+
+											@media (max-width: 446px) {
+												height: 340px;
+
+												@media (max-width: 388px) {
+													height: 360px;
+
+													@media (max-width: 325px) {
+														height: 380px;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
 			.titre {
 				font-family: @myFont;
 				font-size: @titleSize;
@@ -250,6 +521,20 @@
 
 				margin: 0px;
 				padding: 25px 0px 0px;
+
+				@media (max-width: 1199px) {
+					font-size: @titleSizemd;
+					
+					@media (max-width: 991px) {
+						font-size: @titleSizexs;
+						padding: 25px 20px 0px;
+
+						@media (max-width: 503px) {
+							font-size: @titleSizexxs;
+							text-align: center;
+						}
+					}
+				}
 			}
 
 			.leftBar {
@@ -261,6 +546,55 @@
 				height: 70%;
 
 				background-color: @darkBlue2;
+
+				@media (max-width: 991px) {
+					left: 32px;
+
+					@media (max-width: 562px) {
+						top: 21%;
+						height: 71%;
+
+						@media (max-width: 533px) {
+							top: 20%;
+							height: 72%;
+
+							@media (max-width: 509px) {
+								top: 19%;
+								height: 73%;
+
+								@media (max-width: 503px) {
+									top: 22%;
+									height: 70%;
+
+									@media (max-width: 463px) {
+										top: 20%;
+										height: 72%;
+
+										@media (max-width: 452px) {
+											top: 19%;
+											height: 73%;
+
+											@media (max-width: 446px) {
+												top: 18%;
+												height: 74%;
+
+												@media (max-width: 388px) {
+													top: 17%;
+													height: 75%;
+
+													@media (max-width: 325px) {
+														top: 16%;
+														height: 76%;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			.contenu {
@@ -272,6 +606,10 @@
 					padding-left: 25px;
 					margin-bottom: 20px;
 
+					@media (max-width: 991px) {
+						padding-left: 34px;
+					}
+
 					.titreExp {
 						position: relative;
 
@@ -279,9 +617,21 @@
 						font-weight: bold;
 						font-size: @littleTitleSize;
 						color: @newWhite;
-						text-shadow: @shadowTextDark;
+						text-shadow: @shadowTextBlue;
 
 						margin: 0px;
+
+						@media (max-width: 1199px) {
+							font-size: @littleTitleSizemd;
+							
+							@media (max-width: 991px) {
+								font-size: @littleTitleSizexs;
+
+								@media (max-width: 503px) {
+									font-size: @littleTitleSizexxs;
+								}
+							}
+						}
 
 						.leftPointer {
 							position: absolute;
@@ -295,6 +645,13 @@
 							border-radius: 6px;
 
 							background-color: @greyBlue;
+
+							@media (max-width: 991px) {
+								top: 25%; left: -21px;
+
+								@media (max-width: 503px) {
+								}
+							}
 						}
 
 						.selector {
@@ -308,6 +665,18 @@
 							border: 2px solid transparent;
 							border-radius: 18px;
 							border-color: @greyBlue;
+
+							@media (max-width: 1199px) {
+								top: 17%; left: -4.3%;
+								
+								@media (max-width: 991px) {
+									top: 10%; left: -25px;
+
+									@media (max-width: 562px) {
+										top: 12%;
+									}
+								}
+							}
 						}
 						.noLeft {
 							border-left: none;
@@ -322,7 +691,7 @@
 							border-bottom: none;
 						}						
 						.clicked {
-							background-color: @darkRed2;
+							background-color: @darkBlue1;
 							z-index: 3;
 						}
 					}
@@ -333,6 +702,19 @@
 
 						margin: 0px;
 						display: none;
+
+
+						@media (max-width: 1199px) {
+							font-size: @textSizemd;
+							
+							@media (max-width: 991px) {
+								font-size: @textSizexs;
+
+								@media (max-width: 503px) {
+									font-size: @textSizexxs;
+								}
+							}
+						}
 					}
 
 					&:hover {
@@ -348,8 +730,21 @@
 #secondBlock {
 	margin-top: 60px;
 
+	@media (max-width: 991px) {
+		margin-top: 0px;
+	}
+
 	.formations {
 		padding: 0px;
+
+		@media (max-width: 991px) {
+			padding-top: 40px;
+			border-right: 3px solid @darkBlue1;
+
+			@media (max-width: 503px) {
+				padding-top: 30px;
+			}
+		}
 
 		.titre {
 			font-family: @myFont;
@@ -360,27 +755,75 @@
 			text-align: center;
 
 			margin: 0px;
+
+			@media (max-width: 1199px) {
+				font-size: @titleSizemd;
+				
+				@media (max-width: 991px) {
+					font-size: @titleSizexs;
+
+					@media (max-width: 503px) {
+						font-size: @titleSizexxs;
+					}
+				}
+			}
 		}
 
 		.contentForm {
 			padding: 30px 30px 0px 0px;
 			margin-bottom: 0px;
 
+			@media (max-width: 991px) {
+				padding: 0px;
+			}
+
 			.formation {
 				list-style: none;
 				color: @darkRed2;
 
 				padding: 5px 0px 5px 30px;
+
+				@media (max-width: 991px) {
+					padding: 1px 30px;
+
+					@media (max-width: 503px) {
+						padding: 1px 30px;
+					}
+				}
 				
 				.titreForm {
 					font-family: @myFont;
 					font-weight: bold;
 					font-size: @littleTitleSize;
+
+					@media (max-width: 1199px) {
+						font-size: @littleTitleSizemd;
+						
+						@media (max-width: 991px) {
+							font-size: @littleTitleSizexs;
+
+							@media (max-width: 503px) {
+								font-size: @littleTitleSizexxs;
+							}
+						}
+					}
 				}
 
 				.contenuForm {
 					font-family: @myFont;
 					font-size: @textSize;
+
+					@media (max-width: 1199px) {
+						font-size: @textSizemd;
+						
+						@media (max-width: 991px) {
+							font-size: @textSizexs;
+
+							@media (max-width: 503px) {
+								font-size: @textSizexxs;
+							}
+						}
+					}
 				}
 			}
 
@@ -392,8 +835,12 @@
 				background-color: @greyBlue;
 				box-shadow: @shadowBox;
 
+				@media (max-width: 991px) {
+					border-bottom: 3px solid @darkBlue1;
+				}
+
 				.titreForm {
-					text-shadow: @shadowTextDark;
+					text-shadow: 1px 1px 1px rgba(2, 27, 47, 0.25);
 				}
 			}
 		}
@@ -406,6 +853,17 @@
 
 		border-left : 3px solid @darkBlue1;
 
+		@media (max-width: 991px) {
+			padding-top: 40px;
+			padding-bottom: 60px;
+
+
+			@media (max-width: 503px) {
+				padding-top: 30px;
+				padding-bottom: 50px;
+			}
+		}
+
 		.titre {
 			font-family: @myFont;
 			font-weight: bold;
@@ -415,27 +873,75 @@
 			text-align: center;
 
 			margin: 0px;
+
+			@media (max-width: 1199px) {
+				font-size: @titleSizemd;
+				
+				@media (max-width: 991px) {
+					font-size: @titleSizexs;
+
+					@media (max-width: 503px) {
+						font-size: @titleSizexxs;
+					}
+				}
+			}
 		}
 
 		.contentProj {
 			padding: 30px 30px 0px 0px;
 			margin-bottom: 0px;
 
+			@media (max-width: 991px) {
+				padding: 0px;
+			}
+
 			.projet {
 				list-style: none;
 				color: @darkRed2;
 
 				padding: 5px 0px 5px 30px;
+
+				@media (max-width: 991px) {
+					padding: 1px 30px;
+
+					@media (max-width: 503px) {
+						padding: 1px 30px;
+					}
+				}
 				
 				.titreProj {
 					font-family: @myFont;
 					font-weight: bold;
 					font-size: @littleTitleSize;
+
+					@media (max-width: 1199px) {
+						font-size: @littleTitleSizemd;
+						
+						@media (max-width: 991px) {
+							font-size: @littleTitleSizexs;
+
+							@media (max-width: 503px) {
+								font-size: @littleTitleSizexxs;
+							}
+						}
+					}
 				}
 
 				.contenuProj {
 					font-family: @myFont;
 					font-size: @textSize;
+
+					@media (max-width: 1199px) {
+						font-size: @textSizemd;
+						
+						@media (max-width: 991px) {
+							font-size: @textSizexs;
+
+							@media (max-width: 503px) {
+								font-size: @textSizexxs;
+							}
+						}
+					}
 				}
 			}
 
@@ -448,6 +954,16 @@
 
 				background-color: @darkBlue2;
 				box-shadow: @shadowBox;
+
+				@media (max-width: 1199px) {
+					padding-left: 20px;
+					padding-right: 15px;
+					margin-top: 22px + @ecartLast;
+
+					@media (max-width: 991px) {
+						margin-top: 10px + @ecartLast;
+					}
+				}
 
 				.titreProj {
 					text-shadow: 1px 1px 2px rgba(150, 169, 185, 0.25);
@@ -466,6 +982,12 @@
 	margin: 60px 0px;
 	padding-bottom: 20px;
 
+	@media (max-width: 991px) {
+		margin: 0px;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+
 	.titre {
 		font-family: @myFont;
 		font-weight: bold;
@@ -474,6 +996,18 @@
 
 		margin: 0px;
 		padding: 15px 20px 0px;
+
+		@media (max-width: 1199px) {
+			font-size: @titleSizemd;
+			
+			@media (max-width: 991px) {
+				font-size: @titleSizexs;
+
+				@media (max-width: 503px) {
+					font-size: @titleSizexxs;
+				}
+			}
+		}
 	}
 
 	.contenu {
@@ -485,6 +1019,18 @@
 			color: @darkRed1;
 
 			margin: 0px;
+
+			@media (max-width: 1199px) {
+				font-size: @littleTitleSizemd;
+				
+				@media (max-width: 991px) {
+					font-size: @littleTitleSizexs;
+
+					@media (max-width: 503px) {
+						font-size: @littleTitleSizexxs;
+					}
+				}
+			}
 		}
 
 		.listAboutMe {
@@ -495,20 +1041,43 @@
 				font-family: @myFont;
 				font-size: @textSize;
 				color: @greyBlue;
+
+				@media (max-width: 1199px) {
+					font-size: @textSizemd;
+				
+					@media (max-width: 991px) {
+						font-size: @textSizexs;
+
+						@media (max-width: 503px) {
+							font-size: @textSizexxs;
+						}
+					}
+				}
 			}
 		}
 
 		.resSoc {
 			padding: 0px;
 			padding-top: 30px;
+
+			@media (max-width: 1199px) {
+				padding-top: 15px;
+			
+				@media (max-width: 991px) {
+					padding-bottom: 20px;
+					padding-left: 7%;
+				}
+			}
 			
 			.listRs {
 				position: relative;
 
-				text-align: center;
-
 				padding: 10px 0px;
 				height: 50px;
+
+				@media (max-width: 991px) {
+					width: 200px;
+				}
 
 				.infoRs {
 					position: absolute;
@@ -518,6 +1087,10 @@
 
 					list-style: none;
 					display: inline;
+
+					@media (max-width: 991px) {
+						left: 0;
+					}
 
 					.hoverRs {
 						position: absolute;
@@ -560,10 +1133,38 @@
 				.rs2 {
 					left: 60%;
 				}
+
+				@media (max-width: 1199px) {
+					.rs0 {
+						left: 27%;
+					}
+					.rs1 {
+						left: 45%;
+					}
+					.rs2 {
+						left: 63%;
+					}	
+				}
+
+				@media (max-width: 991px) {
+					.rs0 {
+						left: 0%;
+					}
+					.rs1 {
+						left: 30%;
+					}
+					.rs2 {
+						left: 60%;
+					}	
+				}
 			}
 
 			.titreDetail {
 				text-align: center;
+
+				@media (max-width: 991px) {
+					text-align: initial;
+				}
 			}
 		}
 
