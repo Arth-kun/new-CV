@@ -215,7 +215,7 @@ angular.module('myApp', [])
 			"titre": "Cours en ligne - depuis 2016",
 			"contenu": "Apprentissage des nouvelles technos web sur le site de cours en ligne egghead.io."
 		}, {
-			"titre": "Diplôme du Baccalaureat - 2014",
+			"titre": "Diplôme du Baccalauréat - 2014",
 			"contenu": "Acquisition d’un Baccalauréat scientifique au lycée David d’Angers à Angers."
 		}],
 		"projets": [{
