@@ -162,7 +162,7 @@ angular.module('myApp', [])
                 "contenu": "Apprentissage des nouvelles technos web sur le site de cours en ligne egghead.io."
             }, {
                 "titre": "Diplôme du Baccalaureat - 2014",
-                "contenu": "Acquisition d’un Baccalaureat scientifique au lycée David d’Angers à Angers."
+                "contenu": "Acquisition d’un Baccalauréat scientifique au lycée David d’Angers à Angers."
             }],
         "projets": [{
                 "titre": "ConecShop",
