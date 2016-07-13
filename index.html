@@ -16,6 +16,13 @@
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
+
+	<span class="stateTriangle">
+		<span class="backgroundTriangle">
+			<span class="textTriangle">Bêta version</span>
+		</span>
+	</span>
+
 	<div id="mainContainer" class="container">
 		<header id="titreCV" class="row">
 
@@ -33,6 +40,17 @@
 			</div>
 		
 		</header>
+
+		<main id="resumeBlock" class="row">
+			<div class="col-lg-12 resume">
+				<div class="triangleContainer">
+					<div class="triangleUpDown"></div>
+				</div>
+				<p class="resumeText">Curieux de nature, je suis quelqu’un de passionné, qui aime apprendre et qui sais rapidement s’adapter. J’ai déjà eu l’occasion de travailler sur divers projets et autant de diverses technologies qui me donnent un certain recul sur mon travail et une bonne polyvalence.</p>
+				<p class="resumeText">
+				Je recherche actuellement une alternance en Lorraine à partir de Septembre 2016 afin de valider mon titre professionnel de niveau III à l'école de la filière numérique, l'IMIE.</p>
+			</div>
+		</main>
 
 		<main id="mainBlock" class="row">
 			
@@ -55,13 +73,13 @@
 
 			<div class="col-lg-8 col-md-8 infoExperience">
 				<div class="infos">
-					<div class="topInfo">
-						<span class="leftInfo">{{curiculumVitae.info.tel}}</span>
-						<span class="rightInfo">{{curiculumVitae.info.age}}</span>
+					<div class="topInfo row">
+						<span class="leftInfo col-lg-9 col-md-9 col-xs-9">{{curiculumVitae.info.tel}}</span>
+						<span class="rightInfo col-lg-3 col-md-3 col-xs-3">{{curiculumVitae.info.age}}</span>
 					</div>
-					<div class="botInfo">
-						<span class="leftInfo">{{curiculumVitae.info.mail}}</span>
-						<span class="rightInfo">{{curiculumVitae.info.permis}}</span>
+					<div class="botInfo row">
+						<span class="leftInfo col-lg-9 col-md-9 col-xs-9">{{curiculumVitae.info.mail}}</span>
+						<span class="rightInfo col-lg-3 col-md-3 col-xs-3">{{curiculumVitae.info.permis}}</span>
 					</div>
 					
 				</div>

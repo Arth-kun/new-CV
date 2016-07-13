@@ -130,11 +130,13 @@ angular.module('myApp', [])
             ], [
                 "C# .Net", "level2"
             ], [
+                "SQL", "level2"
+            ], [
                 "Wordpress", "level2"
             ], [
                 "Photoshop", "level1"
             ], [
-                "Linux", "level1"
+                "Linux", "level2"
             ], [
                 "Anglais", "level3"
             ]],
@@ -147,6 +149,9 @@ angular.module('myApp', [])
         "experiences": [{
                 "titre": "Développeur - Octave | Février à Août 2016",
                 "contenu": "Création d’une application hybride de commerce connecté, grâce à la technologie des iBeacons (balises Bluetooth), participation à la migration C# de l’ERP."
+            }, {
+                "titre": "Chargé de relations - IMIE | Depuis Février 2016",
+                "contenu": "Membre actif du bureau des étudiants en tant que chargé de relation à travers l'organisation de multiples évènements."
             }, {
                 "titre": "Webmaster - Intervalles | Juillet à Août 2015",
                 "contenu": "Mise à jour de contenus web sur le site Gamecash.fr, webmarketing (Analytics, Twitter). Création d'une infografie pour les magasins du réseau."

@@ -20,8 +20,8 @@
 @littleTitleSize: 1.8em;
 @textSize: 1.5em;
 
-@tailleCompExp: 339px;// hauteur du block competences / experiences
 @ecartLast: 20px; //ecart last formation / projet
+@tailleBar: 280px; //taille de la bar exp proportionnel avec la taille du main block
 
 //medium size
 	@titleSizemd: 2.2em;
@@ -64,7 +64,52 @@
 	font-weight: bold;
 }
 
+html, body {
+	//height: 100%;
+} 
+
+.stateTriangle {
+	
+	position: absolute;
+	top: 0;
+	z-index: 904;
+
+	width: 25%;
+	height: 50%;
+
+	border: 0px solid transparent;
+	border-right: none;
+	border-bottom: none;
+	overflow: hidden;
+	
+
+	.backgroundTriangle {
+		position: absolute;
+		top: 0;
+
+		width: 300px;
+		height: 300px;
+
+		background: url(img/stateTriangle.png);
+		transform: rotate(-45deg) translateY(-220px) translateX(0px);
+	
+		.textTriangle {
+		    position: absolute;
+		    bottom: 0;
+		    width: 100%;
+
+		    color: @greyBlue;
+			font-size: @textSize;
+			font-family: @myFont;
+			font-weight: bold;
+			text-align: center;
+		}
+	}	
+}
+
 #mainContainer {
+	//height: 100%;
+
 	@media (max-width: 991px) {
 		width: auto !important;
 	}
@@ -166,11 +211,42 @@
 	}
 }
 
+#resumeBlock {
+	margin-top: 50px;
 
-#mainBlock {
-	margin-top: 60px;
-
+	background-color: @darkYellow;
 	box-shadow: @shadowBox;
+
+	.resume {
+		position: relative;
+
+		padding: 20px 30px;
+
+		/*.triangleContainer {
+			position: absolute;
+			left: 47%;
+
+			.triangleUpDown {
+				width: 0; 
+	  			height: 0; 
+	  			border-left: 20px solid transparent;
+	  			border-right: 20px solid transparent;
+	  
+	 			border-top: 20px solid @newWhite;
+			}
+		}*/
+
+		.resumeText {
+			color: @newWhite;
+			font-size: @textSize;
+			font-family: @myFont;
+			font-weight: bold;
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
 
 	@media (max-width: 1199px) {
 		margin-top: 30px;
@@ -179,9 +255,26 @@
 			margin-top: 15px;
 		}
 	}
+}
+
+#mainBlock {
+	
+	@media (min-width: 991px) {
+		height: @tailleBar + 220px;
+	}
+
+	box-shadow: @shadowBox;
 
 	.competences {
+
+		@media (min-width: 991px) {
+			height: 100%;
+		}
+
 		padding: 0px;
+
+		background-color: @darkBlue2;
+
 		.titre {
 			position: relative;
 			z-index: 1;
@@ -215,7 +308,7 @@
 			background-image: url('img/flecheComp.png');
 
 			position: absolute;
-			top: 13%; left: 43%;
+			top: 12%; left: 43%;
 
 			transform: rotate(45deg);
 			
@@ -244,19 +337,16 @@
 			margin-bottom: 0px;
 			padding: 20px 20px 15px 40px;
 
-			height: @tailleCompExp;
+			//height: @tailleCompExp;
 
 			background-color: @darkBlue2;
 
 			@media (max-width: 1199px) {
-				height: @tailleCompExpmd;
-				
+					
 				@media (max-width: 991px) {
-					height: 355px;
 					padding: 20px 10px 0px 50px;
 
 					@media (max-width: 503px) {
-						height: 285px;
 						padding: 15px 10px 0px 30px;
 					}
 				}
@@ -266,7 +356,7 @@
 				position: relative;
 				list-style: none;
 
-				padding-top: 8px; 
+				padding-top: 10px; 
 
 				@media (max-width: 991px) {
 					padding-top: 15px; 
@@ -377,11 +467,16 @@
 	}
 
 	.infoExperience {
+		@media (min-width: 991px) {
+			height: 100%;
+		}
+
 		padding: 0px;
+
+		background-color: @greyBlue2;
 
 		.infos {
 			font-family: @myFont;
-			font-size: @littleTitleSize;
 			font-weight: bold;
 			color: @darkBlue2;
 			text-shadow: @shadowText;
@@ -389,20 +484,6 @@
 			padding: 0px 35px;
 
 			background-color: @greyBlue;
-
-			@media (max-width: 1199px) {
-				font-size: @littleTitleSizemd;
-				
-				@media (max-width: 991px) {
-					font-size: @littleTitleSizexs;
-
-					@media (max-width: 503px) {
-						font-size: @littleTitleSizexxs;
-						padding-bottom: 50px;
-					}
-
-				}
-			}
 
 			.topInfo {
 				position: relative;
@@ -424,20 +505,43 @@
 				} 
 			}
 
-			.rightInfo {
+			.rightInfo, .leftInfo {
+				font-size: @littleTitleSize;
+
+				@media (max-width: 1199px) {
+					font-size: @littleTitleSizemd;
+					
+					@media (max-width: 991px) {
+						font-size: 3.0em;
+
+						@media (max-width: 503px) {
+							font-size: 3.0em;
+							padding-bottom: 50px;
+						}
+
+					}
+				}
+			}
+
+
+			/*.rightInfo {
 				position: absolute;
 				left: 82%;
+				@media (max-width: 991px) {
+						font-size: 2.0em;
 
-				@media (max-width: 553px) {
-					left: 80%;
-					@media (max-width: 503px) {
-						left: 0; top: 175%;
+					@media (max-width: 553px) {
+						left: 80%;
 
-						@media (max-width: 343px) {
-							top: 225%;
+						@media (max-width: 503px) {
+							left: 0; top: 175%;
 
-							@media (max-width: 314px) {
-								top: 175%;
+							@media (max-width: 343px) {
+								top: 225%;
+
+								@media (max-width: 314px) {
+									top: 175%;
+								}
 							}
 						}
 					}
@@ -452,7 +556,7 @@
 						top: 120%;
 					}
 				}
-			}
+			}*/
 		}
 
 		.experiences {
@@ -460,55 +564,19 @@
 
 			font-family: @myFont;
 
-			height: @tailleCompExp;
+			//height: @tailleCompExp;
 
 			padding: 0px 35px;
 
 			background-color: @greyBlue2;
 
 			@media (max-width: 1199px) {
-				height: @tailleCompExpmd;
 				padding: 0px 24px;
 
 				@media (max-width: 991px) {
-					height: 300px;
 					padding: 0px 15px;
 
-					@media (max-width: 562px) {
-						height: 320px;
-
-						@media (max-width: 533px) {
-							height: 340px;
-
-							@media (max-width: 509px) {
-								height: 360px;
-
-								@media (max-width: 503px) {
-									height: 270px;
-
-									@media (max-width: 463px) {
-										height: 300px;
-
-										@media (max-width: 452px) {
-											height: 320px;
-
-											@media (max-width: 446px) {
-												height: 340px;
-
-												@media (max-width: 388px) {
-													height: 360px;
-
-													@media (max-width: 325px) {
-														height: 380px;
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
+				
 				}
 			}
 
@@ -539,61 +607,16 @@
 
 			.leftBar {
 				position: absolute;
-				top: 22%; left: 5%;
+				top: 75px; left: 5%;
 				z-index: 2;
 
 				width: 2px;
-				height: 70%;
+				height: @tailleBar;
 
 				background-color: @darkBlue2;
 
 				@media (max-width: 991px) {
 					left: 32px;
-
-					@media (max-width: 562px) {
-						top: 21%;
-						height: 71%;
-
-						@media (max-width: 533px) {
-							top: 20%;
-							height: 72%;
-
-							@media (max-width: 509px) {
-								top: 19%;
-								height: 73%;
-
-								@media (max-width: 503px) {
-									top: 22%;
-									height: 70%;
-
-									@media (max-width: 463px) {
-										top: 20%;
-										height: 72%;
-
-										@media (max-width: 452px) {
-											top: 19%;
-											height: 73%;
-
-											@media (max-width: 446px) {
-												top: 18%;
-												height: 74%;
-
-												@media (max-width: 388px) {
-													top: 17%;
-													height: 75%;
-
-													@media (max-width: 325px) {
-														top: 16%;
-														height: 76%;
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
 				}
 			}
 
