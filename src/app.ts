@@ -167,7 +167,6 @@ angular.module('myApp', [])
 	}
 
 
-
 	//data
 	$scope.curiculumVitae = {
 		"titre" : {
@@ -204,7 +203,7 @@ angular.module('myApp', [])
 			"titre": "Développeur - Octave | Février à Août 2016",
 			"contenu": "Création d’une application hybride de commerce connecté, grâce à la technologie des iBeacons (balises Bluetooth), participation à la migration C# de l’ERP."
 		},{
-			"titre": "Chargé de relations - IMIE | Depuis Février 2016",
+			"titre": "Chargé de relations - BDE IMIE | Depuis Février 2016",
 			"contenu": "Membre actif du bureau des étudiants en tant que chargé de relation à travers l'organisation de multiples évènements."
 		},{
 			"titre": "Webmaster - Intervalles | Juillet à Août 2015",

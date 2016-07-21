@@ -118,6 +118,7 @@ html, body {
 
 #titreCV {
 	padding-top: 40px;
+	margin-bottom: 50px;
 
 	@media (max-width: 991px) {
 		padding-bottom: 10px;
@@ -212,29 +213,41 @@ html, body {
 }
 
 #resumeBlock {
-	margin-top: 50px;
-
-	background-color: @darkYellow;
-	box-shadow: @shadowBox;
+	padding: 0px 5px;
 
 	.resume {
+		background-color: @darkBlue2;
+		box-shadow: @shadowBox;
 		position: relative;
 
 		padding: 20px 30px;
 
-		/*.triangleContainer {
+		.triangleContainer {
 			position: absolute;
 			left: 47%;
+			top: 22.5px;
 
 			.triangleUpDown {
 				width: 0; 
 	  			height: 0; 
-	  			border-left: 20px solid transparent;
-	  			border-right: 20px solid transparent;
+	  			border-left: 12.5px solid transparent;
+	  			border-right: 12.5px solid transparent;
 	  
-	 			border-top: 20px solid @newWhite;
+	 			border-top: 15px solid @newWhite;
+
+	 			//display: none;
 			}
-		}*/
+		}
+
+		.circle {
+			position: absolute;
+			left: 46.3%;
+			top: 12px;
+		  	overflow: hidden;
+			width: 40px;
+			height: 35px;
+			border-radius: 50%;
+		}
 
 		.resumeText {
 			color: @newWhite;
@@ -242,8 +255,10 @@ html, body {
 			font-family: @myFont;
 			font-weight: bold;
 
+			margin-top: 30px;
+
 			&:last-child {
-				margin-bottom: 0px;
+				margin: 0px;
 			}
 		}
 	}
